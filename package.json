@@ -1,6 +1,6 @@
 {
   "name": "oktopost-plankton-array",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Functions for array object",
   "main": "index.js",
   "scripts": {

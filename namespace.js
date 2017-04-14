@@ -1,10 +1,15 @@
-'use strict'
+'use strict';
 
 
 const Namespace = require('oktopost-namespace');
 
 
-const container = {};
+const container = {
+	Plankton: {
+		is: require('oktopost-plankton-is').is
+	}
+};
+
 const Plankton = new Namespace(container);
 
 
