@@ -6,6 +6,8 @@ require('../namespace').namespace('Plankton', function(container) {
 	
 	
 	/**
+	 * @name Plankton.array
+	 * 
 	 * @param {*} subject
 	 * @return {Array}
 	 */
@@ -20,30 +22,33 @@ require('../namespace').namespace('Plankton', function(container) {
 	/**
 	 * @param {Array} subject
 	 * @param {function(*)} callback
+	 * @param {*=} scope
 	 */
-	array.forEach = function(subject, callback) {
+	array.forEach = function(subject, callback, scope) {
 		array.forEach.key(subject, function(key) {
-			return callback(subject[key]);
+			return callback.call(scope, subject[key]);
 		});
 	};
 	
 	/**
 	 * @param {Array} subject
 	 * @param {function(*)} callback
+	 * @param {*=} scope
 	 */
 	array.forEach.value = array.forEach;
 	
 	/**
 	 * @param {Array} subject
 	 * @param {function(Number)} callback
+	 * @param {*=} scope
 	 */
-	array.forEach.key = function(subject, callback) {
+	array.forEach.key = function(subject, callback, scope) {
 		for (var key in subject) {
 			if (!is.index(key)) {
 				continue;
 			}
 			
-			if (callback(parseInt(key)) === false) {
+			if (callback.call(scope, parseInt(key)) === false) {
 				break;
 			}
 		}
@@ -52,22 +57,24 @@ require('../namespace').namespace('Plankton', function(container) {
 	/**
 	 * @param {Array} subject
 	 * @param {function(Number *)} callback
+	 * @param {*=} scope
 	 */
-	array.forEach.pair = function(subject, callback) {
+	array.forEach.pair = function(subject, callback, scope) {
 		array.forEach.key(subject, function(key) {
-			return callback(key, subject[key]);
+			return callback.call(scope, key, subject[key]);
 		});
 	};
 	
 	/**
 	 * @param {Array} subject
 	 * @param {function(Array)} callback
+	 * @param {*=} scope
 	 */
-	array.forEach.item = function(subject, callback) {
+	array.forEach.item = function(subject, callback, scope) {
 		array.forEach.pair(subject, function(key, value) {
 			var obj = {};
 			obj[key] = value;
-			return callback(obj);
+			return callback.call(scope, obj);
 		});
 	};
 	

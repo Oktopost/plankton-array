@@ -70,6 +70,12 @@ suite('array module', function() {
 				array.forEach.value(subject, (v) => { result.push(v) });
 				assert.deepEqual([], result);
 			});
+			
+			test('passed scope used', () => {
+				let scope;
+				array.forEach.value([1], function () { scope = this; }, 1);
+				assert.strictEqual(1, scope);
+			});
 		});
 		
 		suite('array.forEach.key', () => {
@@ -98,6 +104,12 @@ suite('array module', function() {
 				
 				array.forEach.key(data, (...args) => { result.push(args) });
 				assert.deepEqual([[0], [100]], result);
+			});
+			
+			test('passed scope used', () => {
+				let scope;
+				array.forEach.key([1], function () { scope = this; }, 1);
+				assert.strictEqual(1, scope);
 			});
 		});
 		
@@ -128,6 +140,12 @@ suite('array module', function() {
 				array.forEach.pair(data, (...args) => { result.push(args) });
 				assert.deepEqual([[0, 1], [100, 2]], result);
 			});
+			
+			test('passed scope used', () => {
+				let scope;
+				array.forEach.pair([1], function () { scope = this; }, 1);
+				assert.strictEqual(1, scope);
+			});
 		});
 		
 		suite('array.forEach.item', () => {
@@ -156,6 +174,12 @@ suite('array module', function() {
 				
 				array.forEach.item(data, (...args) => { result.push(args) });
 				assert.deepEqual([[{'0': 1}], [{'100': 2}]], result);
+			});
+			
+			test('passed scope used', () => {
+				let scope;
+				array.forEach.item([1], function () { scope = this; }, 1);
+				assert.strictEqual(1, scope);
 			});
 		});
 	});
