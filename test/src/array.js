@@ -60,6 +60,16 @@ suite('array module', function() {
 				array.forEach.value(data, (...args) => { result.push(args) });
 				assert.deepEqual([[1], [2]], result);
 			});
+			
+			test('none index fields skipped', () => {
+				let result = [];
+				let subject = [];
+				
+				subject.a = 5;
+				
+				array.forEach.value(subject, (v) => { result.push(v) });
+				assert.deepEqual([], result);
+			});
 		});
 		
 		suite('array.forEach.key', () => {

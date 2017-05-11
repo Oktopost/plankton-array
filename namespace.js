@@ -2,18 +2,16 @@
 
 
 const Namespace = require('oktopost-namespace');
+const is = require('oktopost-plankton-is').is;
 
 
 const container = {
 	Plankton: {
-		is: require('oktopost-plankton-is').is
+		is: is
 	}
 };
 
 const Plankton = new Namespace(container);
-
-
-Plankton.namespace('Plankton');
 
 
 module.exports = {

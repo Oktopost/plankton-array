@@ -39,7 +39,7 @@ require('../namespace').namespace('Plankton', function(container) {
 	 */
 	array.forEach.key = function(subject, callback) {
 		for (var key in subject) {
-			if (!is.index(key) || !subject.hasOwnProperty(key)) {
+			if (!is.index(key)) {
 				continue;
 			}
 			

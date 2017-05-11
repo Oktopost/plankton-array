@@ -1,7 +1,7 @@
 {
   "name": "oktopost-plankton-array",
-  "version": "0.0.1",
-  "description": "Functions for array object",
+  "version": "1.0.0",
+  "description": "Functions for arrays",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Oktopost/plankton-is.git"
+    "url": "https://github.com/Oktopost/plankton-array.git"
   },
   "authors": [
     {
@@ -20,9 +20,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Oktopost/plankton-is/issues"
+    "url": "https://github.com/Oktopost/plankton-array/issues"
   },
-  "homepage": "https://github.com/Oktopost/plankton-is#readme",
+  "homepage": "https://github.com/Oktopost/plankton-array#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
