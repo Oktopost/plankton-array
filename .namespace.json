@@ -1,8 +1,0 @@
-{
-	"map": {
-		"file": {
-			"Plankton.array": "./src/Plankton/array",
-			"Plankton.is": "oktopost-plankton-is/src/Plankton/is"
-		}
-	}
-}
