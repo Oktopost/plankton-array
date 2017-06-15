@@ -1,12 +1,13 @@
-require('../namespace').namespace('Plankton', function(container) {
+namespace('Plankton', function(root) {
 	'use strict';
 	
 	
-	var is = container.Plankton.is;
+	var is = root.Plankton.is;
 	
 	
 	/**
-	 * @name Plankton.array
+	 * @class Plankton.array
+	 * @alias array
 	 * 
 	 * @param {*} subject
 	 * @return {Array}

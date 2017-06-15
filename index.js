@@ -1,8 +1,5 @@
 'use strict';
 
 
-var Plankton = require('./namespace').Plankton;
-
-require('./src/array');
-
-module.exports = Plankton;
+var root = require('oktopost-namespace').virtual(__dirname);
+module.exports = root.Plankton.array;
