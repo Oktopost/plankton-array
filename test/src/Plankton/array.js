@@ -354,4 +354,38 @@ suite('array module', function() {
 			assert.deepEqual(original, arr);
 		});
 	});
+	
+	suite('array.unique', () => {
+		test('empty array', () => {
+			assert.deepEqual([], array.unique([]));
+		});
+		
+		test('original array not modified', () => {
+			var arr = [1,2,2,3,3,4,5,6,6,7];
+		
+			array.unique(arr);
+			
+			assert.deepEqual([1,2,2,3,3,4,5,6,6,7], arr);
+		});
+	
+		test('preserve order', () => {
+			var arr = [2,3,3,1,1,2];
+			
+			assert.deepEqual([2,3,1], array.unique(arr));
+		})
+	
+		suite('sanity', () => {
+			test('unique numbers', () => {
+				var arr = [1,2,2,3,3,4,5,6,6,7];
+		
+				assert.deepEqual([1,2,3,4,5,6,7], array.unique(arr));
+			});
+	
+			test('unique strings', () => {
+				var arr = ['a', 'a', 'b', 'c', 'd', 'e', 'e', 'e', 'f'];
+	
+				assert.deepEqual(['a','b','c','d','e','f'], array.unique(arr));
+			});
+		});
+	});
 });

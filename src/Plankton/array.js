@@ -160,7 +160,7 @@ namespace('Plankton', function(root) {
 	
 	/**
 	 * @param {Array} subject
-	 * @returns {Number}
+	 * @returns {bool}
 	 */
 	array.isNormalized = function (subject) {
 		return subject.length === 0 || array.last.key(subject) === (array.count(subject) - 1);
@@ -168,7 +168,7 @@ namespace('Plankton', function(root) {
 	
 	/**
 	 * @param {Array} subject
-	 * @returns {Number}
+	 * @returns {Array}
 	 */
 	array.normalize = function (subject) {
 		var arr = [];
@@ -178,6 +178,18 @@ namespace('Plankton', function(root) {
 		});
 		
 		return arr;
+	};
+	
+	/**
+	 * @param {Array} subject
+	 * @return {*}
+	 */
+	array.unique = function (subject)
+	{
+		return subject.filter(function(value, index, array)
+		{
+			return array.indexOf(value) === index;
+		});
 	};
 	
 	
